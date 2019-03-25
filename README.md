@@ -8,6 +8,20 @@ Allows encyrption and decryption of messages using a one-way hasing algorim. It'
  3. To decrypt the message you will need to create a "rainbow table". Do this using the `rainbow.py` script. This script will ask for the encryption key. This proces can take a *looong* time if you set the blobsize higher (more about that under the configuration header). After this is done, a file will apear called [encryption key].db (needs to be changed later).
  4.  Now let's decrypt the message! Run the `decode.py` script. This script will ask for the encrypted message (step 2) and the encryption key (to find the the rainbow table database file). Depending on the size of the message and the blobsize the decryption time will vary (way shorter than step 3). After the proces is done you can see the decrypted message! Of cource it is also possible to send the encrypted message over the internet. Anyone that knows the encryption key can decode the message using this tool!
 
+## How it works
+#### Encryption
+ 1. Split input into blobs of `blobsize`. (`hello world` would be `[hell] [o wor] [ld  ]` with a `blobsize` of 4).
+ 2. Calculate hash for every blob + salt. (`[hell]` would be the hash of `hellsalt` with a salt being salt).
+
+#### Rainbowtable
+1. Create a rainbowtable of every possible combination with `[a-z] + space` (`aaaa`, `aaab`, `aaac`).
+2. Calculate hash for every item from the rainbowtable with `[item]+[salt]` (Hash of `aaaasalt`, `aaabsalt`).
+3. Save to a SQLite3 Database.
+
+#### Decryption
+1. Lookup every hash inside the rainbowtable using SQLite3.
+2. Combine the results to make it readable.
+
 ## Dependencies
 To run this tool you need to install:
  - Python 3, Tested on 3.5.2. ( python.org )
@@ -20,7 +34,7 @@ The configuration is stored in `CONFIGURATION.py`. It is not needed to edit this
 - `algoritm`, reserved untill I add more algoritm's. Does nothing for now.
 
 ## Issue's
-Please report bugs, any issue's or security issue's using the GH issue's.
+Please report **bugs**, any **issue's** or **security issue's** using the GH issue's.
 
 ### License
 Licensed under the `Apache License 2.0`
