@@ -1,12 +1,4 @@
 # MSGoverHASH
-
-Allows encyrption and decryption of messages using a one-way hasing algorim. It's fully written in Python3. 
-
-
-## Getting Started
-1. Choose a secure password/encrytionkey/salt, you will need this when both encryption and decryption. Try to choose one that is at least 10 characters to fully prevent brute-forcing. 
-2. 
-# MSGoverHASH
 Allows encyrption and decryption of messages using a one-way hasing algorim. It's fully written in Python3. 
 
 
