@@ -1,6 +1,6 @@
-from mmh3 import hash128
 import re
 from CONFIGURATION import *
+from hasher import *
 
 print("\nWhat to encrypt? (Only lowercase letters and spaces)\n\n")
 msg = input()
@@ -22,6 +22,6 @@ print("Using encrytion key: " + securecode)
 
 result = ""
 for group in splitter(msg, blobsize):
-    result = result + str(hash128(group+securecode)) + " "
+    result = result + hash(group+securecode) + " "
 
 print("\n\nEncrypted Message: \n\n" + result + "\n\n")

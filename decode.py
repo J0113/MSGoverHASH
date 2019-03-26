@@ -8,7 +8,6 @@ hashedinput = input()
 print("\nEnter the encrytion key:\n\n")
 securecode = input()
 
-
 if path.isfile(securecode + ".db"):
     starttime = time()
     encryptedmsg = hashedinput.split()

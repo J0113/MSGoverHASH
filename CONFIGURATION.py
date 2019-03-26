@@ -3,7 +3,7 @@
 #                     #
 #    HASH POWERED     #
 # ENCRYPTED MESSAGING #
-#     Version r1.0    #
+#     Version r2.0    #
 # ------------------- #
 
 # Blob Size (Message will be split every x caracters)
@@ -12,4 +12,15 @@
 blobsize = 4
 
 # Hashing Algoritm
-algoritm = "mmh3" #(only murmurhash is currently available; it's fast and secure enough as long as you use a good security code/ salt)
+algoritm = "sha256"
+
+# Available Hashing Algoritms:
+#  mmh3     -->  MurMurHash3 128bits, fast and secure enough
+#  md5      -->  Message Digest Algorithm 5, fast not super secure
+#  sha1     -->  Secure Hash Algorithm 1, fast insecure
+#  sha256   -->  Secure Hash Algorithm 256, slower SUPER secure
+#  sha512   -->  Secure Hash Algorithm 512, slower ULTRA secure
+#  adler32  -->  Adler-32, fast insecure
+#  crc32    -->  Cyclic Redundancy Check, fast insecure
+#  xxhash32 -->  xxHash 32bits version, claims to be the fastest and secure, looks to be faster for this usage
+#  xxhash64 -->  xxHash 64bits version, claims to be the fastest and secure

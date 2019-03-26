@@ -1,8 +1,8 @@
-from mmh3 import hash128
 import apsw
 from time import time
 from itertools import product
 from CONFIGURATION import *
+from hasher import *
 
 letter = "abcdefghijklmnopqrstuvwxyz "
 
@@ -22,13 +22,13 @@ print("[1/3] Done Creating Rainbowtable")
 print("[2/3] Hashing")
 starttimeblob = time()
 for i in rainbowtable[:100000]:
-    memdbc.execute('INSERT INTO tb VALUES (?,?)', (str(hash128(i+securecode)),i))
+    memdbc.execute('INSERT INTO tb VALUES (?,?)', (hash(i+securecode),i))
 endtimeblob = time()
 timeusedblob = endtimeblob-starttimeblob
 print("Estemated Solve Time: " + str(round(timeusedblob/100000*(pow(len(letter),blobsize)))) + " seconds")
 
 for i in rainbowtable[100000:]:
-    memdbc.execute('INSERT INTO tb VALUES (?,?)', (str(hash128(i+securecode)),i))
+    memdbc.execute('INSERT INTO tb VALUES (?,?)', (hash(i+securecode),i))
 print("[2/3] Hashing Done")
 
 print("[3/3] Exporting to file")
