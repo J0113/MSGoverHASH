@@ -29,7 +29,8 @@ adler32   |  Adler-32, fast insecure
 crc32     |  Cyclic Redundancy Check, fast insecure
 mmh3*     |  MurMurHash3 128bits, fast and secure enough  |  
 xxhash32* |  xxHash 32bits version, claims to be the fastest and secure, looks to be faster for this usage
-xxhash64* |  xxHash 64bits version, claims to be the fastest and secure
+xxhash64* |  xxHash 64bits version, claims to be the fastest and secure  
+
 Note: * Requires the installation of additionnal dependencies (listed under 'Dependencies')
 
 ## Dependencies
