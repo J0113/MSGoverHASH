@@ -31,7 +31,7 @@ mmh3*     |  MurMurHash3 128bits, fast and secure enough  |
 xxhash32* |  xxHash 32bits version, claims to be the fastest and secure, looks to be faster for this usage
 xxhash64* |  xxHash 64bits version, claims to be the fastest and secure  
 
-Note: * Requires the installation of additionnal dependencies (listed under 'Dependencies')
+Note: * Requires the installation of additional dependencies (listed under 'Dependencies')
 
 ## Dependencies
 To run this tool you need to install:
