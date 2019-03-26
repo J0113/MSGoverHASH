@@ -3,6 +3,7 @@ Allows encyrption and decryption of messages using a one-way hasing algorim. It'
 
 
 ## Getting Started
+**Install Dependencies Before Staring!**
 #### Encoding
 1. Choose a secure password/encrytionkey/salt, you will need this when both encryption and decryption. Try to choose one that is at least 10 characters to fully prevent brute-forcing.
 2. Encrypt a message using the `encode.py`. The script will ask for the message and the encryption key.
